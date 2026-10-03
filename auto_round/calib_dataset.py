@@ -432,6 +432,7 @@ def get_opencode_instruct_dataset(
     os_cnt, have_bos, have_eos = 0, False, False
 
     for input_id in input_ids:
+        os_cnt, have_bos, have_eos = 0, False, False
         if input_id[0] == bos_token_id:
             input_id = input_id[1:]
             os_cnt, have_bos = os_cnt + 1, True
@@ -926,6 +927,7 @@ def _get_dataset_impl(tokenizer, seqlen, dataset_name="NeelNanda/pile-10k", seed
         os_cnt, have_bos, have_eos = 0, False, False
 
         for input_id in input_ids:
+            os_cnt, have_bos, have_eos = 0, False, False
             if input_id[0] == bos_token_id:
                 input_id = input_id[1:]
                 os_cnt, have_bos = os_cnt + 1, True
